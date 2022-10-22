@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Generador de Contraseñas Ultraseguras</title>
+</head>
+<body>
+    <nav class="nav">
+        <figure><img class="logo" src="https://img.icons8.com/ios7/12x/private2.png" />
+            <span class="navTittle">Generador de Contraseñas</span><span class="tagline">Ultraseguras</span> 
+        </figure>
+    </nav>    
+
+    <main class="main-container">
+        <div class="message-container">
+            <p>Bienvenido a nuestro generador de Contraseñas ULTRASEGURAS, aquí podrás ser tú quien determine la cantidad de caracteres que tendrá tu contraseña, así como los tipos de caracteres de la misma y finalmente tendrás una contraseña que de acuerdo a tus exigencias, podría ser indescifrable por siglos.</p>
+        </div>
+        <section class="section-container">
+            <form class="form-container">
+                <div class="contain-options">
+                    <ul class="contain-type-password">
+                        <li>
+                            <label for="input-length">
+                                <p>Define el total de caracteres</p>
+                                <span class="password-length">55</span>
+                            <input type="range" name="length" class="input-length" min="10" max="100">
+                            </label>
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="letters">
+                            <p>Incluir letras</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="numbers">
+                            <p>Incluir números</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="symbols">
+                            <p>Incluir símbolos</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="words">
+                            <p>Incluir palabras</p>
+                        </li>
+                    </ul>
+                    <div class="contain-button-generator">
+                        <button class="button-generator-password" type="submit">Genera tu contraseña</button>
+                    </div>  
+                </div>
+               
+                <div class="contain-password" name="contain-password">
+                    <span class="text-password">Tu contraseña Ultrasegura es:</span>
+                    <span type="text" class="password" disabled contenteditable></span>
+                    <button class="copy-button" type="button">
+                        <img src="https://img.icons8.com/plasticine/2x/copy.png" alt="icon-copy" class="icon">
+                    </button>
+                </div>
+
+            </form>                
+        </section> 
+    </main>
+
+    <footer>
+        <ul class="social-media">
+            <li>
+                <img src="https://img.icons8.com/material-outlined/344/twitter.png" alt="icon-twitter">
+            </li>
+            <li>
+                <img src="https://img.icons8.com/dotty/2x/instagram-new.png" alt="icon-instagram">
+            </li>
+            <li>
+                <img src="https://img.icons8.com/dotty/2x/facebook-new.png" alt="icon-facebook">
+            </li>
+            <li>
+                <img src="https://img.icons8.com/dotty/2x/discord-logo.png" alt="icon-discord">
+            </li>
+        </ul>
+    </footer>
+</body>
+<script src="./src/index.js"></script>
+</html>
