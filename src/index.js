@@ -2,7 +2,7 @@ const inputLength = document.querySelector(".input-length");
 const passwordLength = document.querySelector(".password-length")
 const form = document.querySelector(".form-container");
 const paragraphPassword = document.querySelector(".password");
-const buttonCopy = document.querySelector(".copy-button");
+const buttonCopy = document.querySelector(".button");
 const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
 
 const letters = [
@@ -95,16 +95,16 @@ function fetchData(API) {
 
 fetchData(API);
 
-function copyToClipboard(target) {
-  const element = document.querySelector(target);
-  const value = element.value;
-  if (value.length === 0) {
-    alert("Tienes que generar una contraseña");
-  } else {
-    window.navigator.clipboard.writeText(value);
-    alert("Copiaste la contraseña");
-  }
-}
+// function copyToClipboard(target) {
+//   const element = document.querySelector(target);
+//   const value = element.innerText;
+//   if (innerText.length === 0) {
+//   alert("Tienes que generar una contraseña");
+//   } else {
+//   window.navigator.clipboard.writeText(value);
+//   alert("Copiaste la contraseña");
+//   }
+// }
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -126,11 +126,27 @@ form.addEventListener("submit", (event) => {
     buttonCopy.disabled = false;
   });
 
-  buttonCopy.addEventListener("click", () => {
-    copyToClipboard("#password");
-  });
+  // buttonCopy.addEventListener("click", () => {
+  //   copyToClipboard(".password");
+  // });
   
+   buttonCopy.addEventListener("click", () => {
+    CopyToClipboard(".password");
+    return false;
+  });
+
   inputLength.addEventListener("input", (e) => {
     passwordLengthParagraph.innerText = e.target.value;
   });
+
+
+  function CopyToClipboard(id)
+  {
+  const r = document.createRange();
+  r.selectNode(document.querySelector(id));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  window.navigator.clipboard.writeText(r);
+  window.getSelection().removeAllRanges();
+  }
 
