@@ -5,7 +5,8 @@
     --color-button: #333533;
     --yellow: #FFEE32;
     --button: #FFD100;
-    --sm: 1.2rem;
+    --xs: 0.9rem;
+    --sm: 1.1rem;
     --md: 1.4rem;
     --lg: 1.6rem;
 }
@@ -30,73 +31,84 @@ li {
     list-style: none;
 }
 
+header {
+    width: 100%;
+    min-width: 360px;
+    height: 60px;
+}
+
 nav
 {
+    min-width: 360px;
+    width: 100%;
     background-color: var(--background);
-    height: 60px;
+    height: 100%;
     color: var(--font-shadow);
     box-shadow: 0px 1px 10px 0 var(--white); 
     margin: 0;
     padding: .5em;
+    display: flex;
+    align-items: center;
 }
 
-figure 
-{
-    margin: 0;
-    padding: 0;
-    width:100%;
-}
 .logo
 {
-    width:50px;
+    width:40px;
     vertical-align:middle
 }
 
 .navTittle 
 {
     padding: 0 0.5em;
-    font-size: var(--sm);
+    font-size: var(--xs);
 }
 .tagline
 {
     font-weight: bold;
-    font-size: var(--md);
+    font-size: var(--sm);
 }
 
 main {
+    width: 100%;
+    min-width: 360px;
     background-color: var(--font-shadow);
     display: grid;
     align-content: center;
-    font-size: var(--sm);
+    font-size: var(--xs);
     
 }
 
 .message-container {
     width: 80%;
+    min-width: 360px;
+    display: flex;
     margin: auto;
-    padding-bottom: 54px;
+    padding:12px 12px 54px 12px;
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: var(--xs);
 }
 .section-container {
     width: 60%;
+    min-width: 360px;
     margin: auto;
-    padding: 20px;
     box-shadow: 0px 1px 5px 0 var(--background); 
     
 }
 
 form {
+    width: 100%;
+    min-width: 360px;
     display: grid;
     grid-template-columns: 2fr 2fr;
     align-items: center;
+    padding: 12px;
 }
 
-input[type="checkbox"] {
-    transform: scale(1.5);
+.contain-options {
+    min-width: 150px;
 }
 .contain-options ul li {
-    padding: 10px;
+    padding: 6px;
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -123,24 +135,24 @@ input[type="checkbox"] {
 }
 
 .contain-password {
+    min-width: 160px;
     height: 100%;
     display: flex;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
     box-shadow: -12px 0 12px -6px var(--color-button);
-    padding: 0 0 0 36px;
-    width: 100%;
+    padding: 0 0 0 12px;
 
 }
 
 .password {
-    margin-top: 12px;
+margin-top: 12px;
 cursor: not-allowed;
 border: 0;
 border-bottom: 1px solid var(--font-shadow);
 padding: 8px;
-font-size: var(--md);
+font-size: var(--sm);
 width: 290px;
 color: var(--yellow);
 display: block;
@@ -161,19 +173,19 @@ button:hover {
     padding: 0;
     border-radius: 6px;
     border: 1px solid var(--white);
-    margin: 0 12px 0 36px;
-    height: 40px;
-    width: 40px;
+    margin: 0 12px 0 0;
+    height: 24px;
+    width: 24px;
 }
 .copy-button img {
-    width: 30px;
+    width: 20px;
 }
 .contain-button-generator button{
     background-color: var(--yellow);
     padding: 12px;
     width: 60%;
     margin: 12px 0;
-    font-size: var(--sm);
+    font-size: var(--xs);
     border-radius: 10px;
     border: 1px solid var(--white);
 }
@@ -183,6 +195,8 @@ button:hover {
 }
 
 footer {
+    width: 100%;
+    min-width: 324px;
     background-color: var(--background);
     height: 60px;
     display: flex;
@@ -201,10 +215,58 @@ footer ul {
 }
 
 .social-media li img {
-    width: 50px;
-    margin:0 20px;
+    width: 40px;
+    margin:0 10px;
 }
 
 .social-media li img:hover {
     cursor: pointer;
+}
+
+
+@media (min-width: 768px){
+
+    .password, 
+    .message-container,
+    main {
+        font-size: var(--md);
+    }
+    .navTittle, .contain-button-generator button 
+    {
+        font-size: var(--sm);
+    }
+    .tagline
+    {
+        font-weight: bold;
+        font-size: var(--md);
+    }
+    
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.copy-button {
+    height: 40px;
+    width: 40px;
+}
+.copy-button img {
+    width: 30px;
+}
+
+.social-media li img {
+    width: 50px;
+    margin:0 20px;
+}
+
+.logo
+{
+    width:50px;
+    vertical-align:middle
+}
+
+
+}
+
+@media (min-width: 1024px) {
+
 }
