@@ -45,6 +45,11 @@ function getRandomNumber(min, max) {
 function generatePassword(passwordLengthChosen, checkBoxChosen) {
 
     let arrayOfArrays = [];
+    console.log(checkBoxChosen)
+    if (checkBoxChosen.words && (checkBoxChosen.letters|| checkBoxChosen.numbers || checkBoxChosen.symbols)) {
+      swal("addsfasdf");
+      
+    }
 
     if (checkBoxChosen.letters) {
         arrayOfArrays.push(letters);
@@ -118,13 +123,32 @@ form.addEventListener("submit", (event) => {
       symbols: formElement.symbols.checked,
     };
 
-    if (checks.words) {
+console.log(Object.values(checks))
+
+
+
+    // if (checks.words) {
+      
+    //   formElement.letters.checked = false;
+    //   formElement.numbers.checked = false;
+    //   formElement.symbols.checked = false;
+    //   }
+    if((checks.letters==false) && (checks.words==false) && (checks.numbers==false) && (checks.symbols==false))
+     {
+      alert("Elige primero una de las opciones")
+     } 
+     if ((checks.words==true) && ((checks.letters==true) || (checks.numbers==true) || (checks.symbols==true)))
+     {
+      alert("No puedes mezclar palabras con el resto de opciones")
       formElement.letters.checked = false;
       formElement.numbers.checked = false;
       formElement.symbols.checked = false;
-      }
-      
-    generatePassword(passwordLength, checks);
+      formElement.words.checked = false;
+     } 
+     else {
+      generatePassword(passwordLength, checks);
+     }  
+
     buttonCopy.disabled = false;
   });
   
