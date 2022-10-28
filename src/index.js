@@ -45,12 +45,36 @@ function getRandomNumber(min, max) {
 function generatePassword(passwordLengthChosen, checkBoxChosen) {
 
     let arrayOfArrays = [];
-    console.log(checkBoxChosen)
-    if (checkBoxChosen.words && (checkBoxChosen.letters|| checkBoxChosen.numbers || checkBoxChosen.symbols)) {
-      swal("addsfasdf");
-      
-    }
+    // switch(true) {
+    //   case checkBoxChosen.letters: 
+    //           arrayOfArrays.push(letters);
+    //   break;
+    //   case checkBoxChosen.numbers: 
+    //           arrayOfArrays.push(numbers);
+    //   break;
+    //   case checkBoxChosen.symbols: 
+    //           arrayOfArrays.push(symbols);
+    //   break;    
+    //   case checkBoxChosen.words: 
+    //           arrayOfArrays.push(words);
+    //   break;
+    // }
 
+    // switch(true) {
+    //   case checkBoxChosen.letters: 
+    //   case checkBoxChosen.numbers: 
+    //   case checkBoxChosen.symbols: 
+    //   case checkBoxChosen.words: 
+    //           arrayOfArrays.push(letters);
+      
+    //           arrayOfArrays.push(numbers);
+      
+    //           arrayOfArrays.push(symbols);
+      
+    //           arrayOfArrays.push(words);
+    //   break;
+    // }
+    
     if (checkBoxChosen.letters) {
         arrayOfArrays.push(letters);
       }
@@ -64,7 +88,6 @@ function generatePassword(passwordLengthChosen, checkBoxChosen) {
     }
 
     if (checkBoxChosen.words) {
-      arrayOfArrays = [];
       arrayOfArrays.push(words);
     }
 
@@ -87,7 +110,7 @@ function generatePassword(passwordLengthChosen, checkBoxChosen) {
 
 function fetchData(API) {
   fetch(API)
-    .then((response) => response.json()) // convierte la api a json
+    .then((response) => response.json())
     .then((data) => {
       words = data
     });
@@ -123,31 +146,37 @@ form.addEventListener("submit", (event) => {
       symbols: formElement.symbols.checked,
     };
 
+    console.log(Object.keys(checks))
 console.log(Object.values(checks))
+console.log(Object.values(checks).forEach)
 
 
 
-    // if (checks.words) {
+    // const values = [];
+    
+//     checks.forEach((checkBox) => {
+//       values.push(checkBox.value);
       
-    //   formElement.letters.checked = false;
-    //   formElement.numbers.checked = false;
-    //   formElement.symbols.checked = false;
-    //   }
+//     })
+// alert(values);
     if((checks.letters==false) && (checks.words==false) && (checks.numbers==false) && (checks.symbols==false))
-     {
+    //if((Object.values(checks)).forEach==false)
+    {
       alert("Elige primero una de las opciones")
-     } 
-     if ((checks.words==true) && ((checks.letters==true) || (checks.numbers==true) || (checks.symbols==true)))
-     {
-      alert("No puedes mezclar palabras con el resto de opciones")
-      formElement.letters.checked = false;
-      formElement.numbers.checked = false;
-      formElement.symbols.checked = false;
-      formElement.words.checked = false;
-     } 
-     else {
-      generatePassword(passwordLength, checks);
-     }  
+      password.innerText = " ";
+    } 
+      else if 
+        ((checks.words==true) && ((checks.letters==true) || (checks.numbers==true) || (checks.symbols==true)))
+        {
+          alert("No puedes mezclar palabras con el resto de opciones")
+          formElement.letters.checked = false;
+          formElement.numbers.checked = false;
+          formElement.symbols.checked = false;
+          formElement.words.checked = false;
+          password.innerText = " ";
+        }  else {
+                  generatePassword(passwordLength, checks);
+    }  
 
     buttonCopy.disabled = false;
   });
