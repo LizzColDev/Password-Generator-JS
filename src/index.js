@@ -4,7 +4,7 @@ const form = document.querySelector(".form-container");
 const password = document.querySelector(".password");
 const buttonCopy = document.querySelector(".button");
 
-const API = "https://clientes.api.greenborn.com.ar/public-random-word?c=9&l=10";
+const API = "https://random-word-api.herokuapp.com/all";
 
 const letters = [
     "a",

@@ -90,8 +90,7 @@ main {
 .section-container {
     width: 60%;
     min-width: 360px;
-    margin: auto;
-    box-shadow: 0px 1px 5px 0 var(--background); 
+    margin: 0 auto 30px;
     
 }
 
@@ -100,8 +99,9 @@ form {
     min-width: 360px;
     display: grid;
     grid-template-columns: 2fr 2fr;
-    align-items: center;
     padding: 12px;
+    box-shadow: 0px 1px 5px 0 var(--background); 
+    
 }
 
 .contain-options {
@@ -111,7 +111,7 @@ form {
     padding: 6px;
     display: flex;
     justify-content:flex-start;
-    align-items: center;
+    
 }
 
 .contain-options ul li p {
@@ -139,27 +139,30 @@ form {
     height: 100%;
     display: flex;
     align-content: center;
-    align-items: center;
     flex-wrap: wrap;
     box-shadow: -12px 0 12px -6px var(--color-button);
     padding: 0 0 0 12px;
 
 }
+.contain-button-and-password {
+    width: 100%;
+    display: flex;
+    margin-top: 6px;
+}
 
 .password {
-margin-top: 12px;
+width: 100%;
 cursor: not-allowed;
 border: 0;
 border-bottom: 1px solid var(--font-shadow);
-padding: 8px;
 font-size: var(--sm);
-width: 290px;
 color: var(--yellow);
 display: block;
 overflow: hidden;
 resize: both;
 line-height: 20px;
 text-align: justify;
+margin-right: 12px;
 }
 
 button:hover {
@@ -173,7 +176,6 @@ button:hover {
     padding: 0;
     border-radius: 6px;
     border: 1px solid var(--white);
-    margin: 0 12px 0 0;
     height: 24px;
     width: 24px;
 }
@@ -269,4 +271,14 @@ input[type="checkbox"] {
 
 @media (min-width: 1024px) {
 
+}
+
+@media (max-height: 900px){
+    .contain-options ul li:nth-child(1) {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content:flex-start;
+        align-items: center;
+        
+    }
 }
